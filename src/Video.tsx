@@ -27,8 +27,8 @@ export const RemotionVideo: React.FC = () => {
 			<Composition
 				id="Main"
 				component={Main}
-				durationInFrames={603}
-				fps={30}
+				durationInFrames={2000}
+				fps={90}
 				width={540}
 				height={540}
 			/>
@@ -42,23 +42,23 @@ const Main = () => {
 		<div style={styles.container}>
 			<Sequence
 				from={0}
-				durationInFrames={60}>
+				durationInFrames={210}>
 				<Preview />
 			</Sequence>
 			<Series.Sequence
-				offset={60}
+				offset={210}
 				layout="none"
-				durationInFrames={180}>
+				durationInFrames={450}>
 				<FoodCards />
 			</Series.Sequence>
 			<Sequence
-				from={240}
-				durationInFrames={60}>
+				from={660}
+				durationInFrames={450}>
 				<Location />
 			</Sequence>
 			<Sequence
-				from={300}
-				durationInFrames={303}>
+				from={1110}
+				durationInFrames={990}>
 				<Join />
 			</Sequence>
 			<Sequence from={0} durationInFrames={durationInFrames}>

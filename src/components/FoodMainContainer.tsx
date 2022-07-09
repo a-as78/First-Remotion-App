@@ -18,7 +18,7 @@ const styles = {
 }
 
 const Main: React.FC = () => {
-	const frame = useCurrentFrame() - 60;
+	const frame = useCurrentFrame() - 210;
 	const { fps, durationInFrames, width, height } = useVideoConfig();
 	const foodsInfo = [
 		{
@@ -42,8 +42,8 @@ const Main: React.FC = () => {
 			description: '0% Fat Greek Yogurt, blueburries, raspberries, honey, coconut, granloa, and raspberry puree.'
 		},
 	]
-	const x =  spring({ frame: frame, fps: frame > 120 ? fps * 40 - (frame - 120)*10 : fps *  40 , from: 0 , to: - 1000 })
-    const visible = frame > 0 && frame < 180 ? 'flex': 'none'
+	const x =  spring({ frame: frame, fps: frame > 385 ? fps * 40 - (frame - 385) * 40 : fps *  40 , from: 0 , to: - 1000 })
+    const visible = frame > 0 && frame < 450 ? 'flex': 'none'
 
 	const mainContainer = {
 		top: `${x}px`,
@@ -59,8 +59,8 @@ const Main: React.FC = () => {
             {foodsInfo.map((food, index) => 
                 <div style={styles.foodWrapper}>
                     <Sequence
-                        from={60 + index * 20}
-                        durationInFrames={180 - index * 20}>
+                        from={210 + index * 60}
+                        durationInFrames={450 - index * 60}>
                         <FoodCards name={food.name} description={food.description} cardIndex={index}/>
                     </Sequence>
                 </div>

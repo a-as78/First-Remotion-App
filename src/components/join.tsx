@@ -44,14 +44,16 @@ const styles = {
 const Join: React.FC = () => {
     const frame = useCurrentFrame();
     const { fps } = useVideoConfig();
-    const bgScale = interpolate(frame, [0, 300], [0.15, 15], {
+    const bgScale = interpolate(frame, [0, 500], [0.15, 15], {
         extrapolateRight: "clamp",
       });
-    const scale = spring({ frame: frame / 2, fps, from: 0, to: 1 });
-    const storeScale = interpolate(frame, [165, 300], [0.5, 1], {
+    const scale = interpolate(frame, [0, 50], [0, 1], {
+        extrapolateRight: "clamp",
+    });
+    const storeScale = interpolate(frame, [445, 500], [0.5, 1], {
         extrapolateRight: "clamp",
       });
-    const getAppScale = interpolate(frame, [165, 180], [0, 0.85], {
+    const getAppScale = interpolate(frame, [445, 500], [0, 0.85], {
         extrapolateRight: "clamp",
     });
     const backgroundContainer = {
@@ -121,7 +123,7 @@ const Join: React.FC = () => {
                     <div>
                         <div style={name}>ecoeats</div>
                     </div>
-                    {frame < 165 ? (
+                    {frame < 445 ? (
                         <>
                             <div style={styles.joinContainer}>
                                 <div>
